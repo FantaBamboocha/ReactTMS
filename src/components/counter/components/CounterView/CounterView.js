@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import styles from "./styles.module.scss";
 
 const СounterView = ({
@@ -21,6 +23,14 @@ const СounterView = ({
       </div>
     </div>
   );
+};
+
+CounterView.propTypes = {
+  countValue: PropTypes.number.isRequired,
+  isEven: PropTypes.bool.isRequired,
+  handleIncrement: PropTypes.func.isRequired,
+  handleDecrement: PropTypes.func.isRequired,
+  handleReset: PropTypes.func.isRequired,
 };
 
 export default СounterView;
