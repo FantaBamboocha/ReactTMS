@@ -12,10 +12,15 @@ class CounterContainer extends Component {
     };
   }
 
+  componentDidUpdate(_, prevState) {
+    if (this.state.countValue !== prevState.countValue) {
+      this.setState({ isEven: this.state.countValue % 2 === 0 ? true : false });
+    }
+  }
+
   handleIncrement = () => {
     this.setState((state) => ({
       countValue: state.countValue + 1,
-      isEven: !state.isEven,
     }));
   };
 
@@ -23,7 +28,6 @@ class CounterContainer extends Component {
     if (this.state.countValue > 0) {
       this.setState((state) => ({
         countValue: state.countValue - 1,
-        isEven: !state.isEven,
       }));
     }
   };

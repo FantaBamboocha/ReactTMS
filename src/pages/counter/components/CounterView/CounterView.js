@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 import styles from "./styles.module.scss";
 
-const СounterView = ({
+const CounterView = ({
   countValue,
   isEven,
   handleIncrement,
@@ -33,4 +33,4 @@ CounterView.propTypes = {
   handleReset: PropTypes.func.isRequired,
 };
 
-export default СounterView;
+export default CounterView;
