@@ -14,7 +14,7 @@ class CounterContainer extends Component {
 
   componentDidUpdate(_, prevState) {
     if (this.state.countValue !== prevState.countValue) {
-      this.setState({ isEven: this.state.countValue % 2 === 0 ? true : false });
+      this.setState({ isEven: this.state.countValue % 2 === 0 });
     }
   }
 
@@ -33,17 +33,20 @@ class CounterContainer extends Component {
   };
 
   handleReset = () => {
-    this.setState({ countValue: 0, isEven: true });
+    this.setState({ countValue: 0 });
   };
 
   render() {
+    const { state, handleIncrement, handleDecrement, handleReset } = this;
+    const { countValue, isEven } = state;
+
     return (
       <CounterView
-        countValue={this.state.countValue}
-        isEven={this.state.isEven}
-        handleIncrement={this.handleIncrement}
-        handleDecrement={this.handleDecrement}
-        handleReset={this.handleReset}
+        countValue={countValue}
+        isEven={isEven}
+        handleIncrement={handleIncrement}
+        handleDecrement={handleDecrement}
+        handleReset={handleReset}
       />
     );
   }
