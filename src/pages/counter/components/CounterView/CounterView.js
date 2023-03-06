@@ -5,6 +5,7 @@ import styles from "./styles.module.scss";
 const CounterView = ({
   countValue,
   isEven,
+  deleteButton,
   handleIncrement,
   handleDecrement,
   handleReset,
@@ -12,7 +13,7 @@ const CounterView = ({
   return (
     <div
       className={styles.wrapper}
-      style={{ backgroundColor: isEven ? "aqua" : "yellow" }}
+      style={{ backgroundColor: isEven ? "aqua" : "brown" }}
     >
       <div> {countValue}</div>
       <div> {isEven ? "четное число" : "нечетное число"}</div>
@@ -20,6 +21,7 @@ const CounterView = ({
         <button onClick={handleDecrement}>-</button>
         <button onClick={handleReset}>Reset</button>
         <button onClick={handleIncrement}>+</button>
+        {deleteButton ? <button>X</button> : null}
       </div>
     </div>
   );

@@ -11,7 +11,10 @@ const Header = () => {
         Home Page
       </Link>
       <Link to={ROUTE_NAMES.COUNTER} className={styles.button}>
-        COUNTER
+        Counter
+      </Link>
+      <Link to={ROUTE_NAMES.COUNTER_LIST} className={styles.button}>
+        Counter List
       </Link>
     </div>
   );

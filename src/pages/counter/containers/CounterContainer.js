@@ -9,6 +9,7 @@ class CounterContainer extends Component {
     this.state = {
       countValue: 0,
       isEven: true,
+      deleteButton: this.props.deleteButton,
     };
   }
 
@@ -38,12 +39,13 @@ class CounterContainer extends Component {
 
   render() {
     const { state, handleIncrement, handleDecrement, handleReset } = this;
-    const { countValue, isEven } = state;
+    const { countValue, isEven, deleteButton } = state;
 
     return (
       <CounterView
         countValue={countValue}
         isEven={isEven}
+        deleteButton={deleteButton}
         handleIncrement={handleIncrement}
         handleDecrement={handleDecrement}
         handleReset={handleReset}
