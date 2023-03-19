@@ -3,13 +3,15 @@ import PropTypes from "prop-types";
 import styles from "./styles.module.scss";
 
 const CounterView = ({
+  id,
   countValue,
-  isEven,
-  deleteButton,
   handleIncrement,
   handleDecrement,
   handleReset,
+  handleDeleteCounter,
 }) => {
+  const isEven = countValue % 2 === 0;
+
   return (
     <div
       className={styles.wrapper}
@@ -18,21 +20,26 @@ const CounterView = ({
       <div> {countValue}</div>
       <div> {isEven ? "четное число" : "нечетное число"}</div>
       <div>
-        <button onClick={handleDecrement}>-</button>
-        <button onClick={handleReset}>Reset</button>
-        <button onClick={handleIncrement}>+</button>
-        {deleteButton ? <button>X</button> : null}
+        <button disabled={countValue === 0} onClick={() => handleDecrement(id)}>
+          -
+        </button>
+        <button onClick={() => handleReset(id)}>Reset</button>
+        <button onClick={() => handleIncrement(id)}>+</button>
+        {handleDeleteCounter && (
+          <button onClick={() => handleDeleteCounter(id)}>X</button>
+        )}
       </div>
     </div>
   );
 };
 
 CounterView.propTypes = {
+  id: PropTypes.string,
   countValue: PropTypes.number.isRequired,
-  isEven: PropTypes.bool.isRequired,
   handleIncrement: PropTypes.func.isRequired,
   handleDecrement: PropTypes.func.isRequired,
   handleReset: PropTypes.func.isRequired,
+  handleDeleteCounter: PropTypes.func,
 };
 
 export default CounterView;

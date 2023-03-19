@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import CounterView from "../components/CounterView/CounterView";
+import CounterView from "../../../components/CounterView/CounterView";
 
 class CounterContainer extends Component {
   constructor(props) {
@@ -8,8 +8,6 @@ class CounterContainer extends Component {
 
     this.state = {
       countValue: 0,
-      isEven: true,
-      deleteButton: this.props.deleteButton,
     };
   }
 
@@ -26,11 +24,9 @@ class CounterContainer extends Component {
   };
 
   handleDecrement = () => {
-    if (this.state.countValue > 0) {
-      this.setState((state) => ({
-        countValue: state.countValue - 1,
-      }));
-    }
+    this.setState((state) => ({
+      countValue: state.countValue - 1,
+    }));
   };
 
   handleReset = () => {
@@ -39,13 +35,11 @@ class CounterContainer extends Component {
 
   render() {
     const { state, handleIncrement, handleDecrement, handleReset } = this;
-    const { countValue, isEven, deleteButton } = state;
+    const { countValue } = state;
 
     return (
       <CounterView
         countValue={countValue}
-        isEven={isEven}
-        deleteButton={deleteButton}
         handleIncrement={handleIncrement}
         handleDecrement={handleDecrement}
         handleReset={handleReset}
