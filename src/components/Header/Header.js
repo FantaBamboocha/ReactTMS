@@ -22,6 +22,9 @@ const Header = () => {
       <Link to={ROUTE_NAMES.REDUX_TODO_LIST} className={styles.button}>
         Todo
       </Link>
+      <Link to={ROUTE_NAMES.RTK_TODO_LIST} className={styles.button}>
+        RTK Todo
+      </Link>
     </div>
   );
 };

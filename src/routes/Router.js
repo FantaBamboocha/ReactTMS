@@ -6,6 +6,7 @@ import ReduxCountersManagerContainer from "../pages/ReduxCountersManager/contain
 import FormContainer from "../pages/Forms/containers/FormContainer";
 import TodoListContainer from "../pages/todoList/containers/TodoListContainer";
 import { ROUTE_NAMES } from "./routeNames";
+import RtkTodoContainer from "../pages/ReduxToolkitTodo/containers/RtkTodoContainer";
 
 const Router = () => {
   return (
@@ -23,6 +24,10 @@ const Router = () => {
       <Route
         path={ROUTE_NAMES.REDUX_TODO_LIST}
         element={<TodoListContainer />}
+      ></Route>
+      <Route
+        path={ROUTE_NAMES.RTK_TODO_LIST}
+        element={<RtkTodoContainer />}
       ></Route>
     </Routes>
   );

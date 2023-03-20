@@ -28,7 +28,7 @@ const FormContainer = () => {
   //     }));
   //   };
 
-  const { form, handleChange, handleReset } = useForm({
+  const { form, handleChange } = useForm({
     email: "",
     password: "",
   });
