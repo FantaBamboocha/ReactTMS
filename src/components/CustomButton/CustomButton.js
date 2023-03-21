@@ -11,6 +11,7 @@ const CustomButton = ({
   color,
   size = "small",
   type,
+  endIcon,
 }) => {
   return (
     <Button
@@ -21,6 +22,7 @@ const CustomButton = ({
       type={type}
       // sx={styles("green")}
       size={size}
+      endIcon={endIcon}
     >
       {text}
     </Button>

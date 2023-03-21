@@ -1,4 +1,6 @@
 import useForm from "../../../../hooks/useForm";
+import CustomInput from "../CustomInput/CustomInput";
+import CustomButton from "../../../../components/CustomButton/CustomButton";
 
 const EditableTodoItem = ({
   id,
@@ -13,21 +15,23 @@ const EditableTodoItem = ({
     <div>
       <div>{taskNumber}</div>
       <form>
-        <input
+        <CustomInput
           type="text"
           name="taskText"
           value={form.taskText}
           onChange={handleChange}
-        ></input>
-        <input
+        />
+
+        <CustomInput
           type="text"
           name="taskDescription"
           value={form.taskDescription}
           onChange={handleChange}
-        ></input>
+        />
       </form>
       <div>
-        <button
+        <CustomButton
+          text="Save"
           onClick={() =>
             handleTaskSave({
               id,
@@ -35,10 +39,9 @@ const EditableTodoItem = ({
               newDescription: form.taskDescription,
             })
           }
-        >
-          Save
-        </button>
-        <button onClick={() => handleTaskCancel(id)}> Cancel </button>
+        />
+
+        <CustomButton text="Cancel" onClick={() => handleTaskCancel(id)} />
       </div>
     </div>
   );

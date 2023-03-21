@@ -1,4 +1,5 @@
 import CustomButton from "../../../../components/CustomButton/CustomButton";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 import styles from "./styles.module.scss";
 
@@ -37,6 +38,7 @@ const TodoItem = ({
           text="Delete"
           onClick={() => handleTaskDelete(id)}
           color="error"
+          endIcon={<DeleteIcon />}
         />
       </div>
     </div>

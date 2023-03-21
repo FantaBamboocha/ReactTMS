@@ -1,7 +1,6 @@
 import CreateTodoForm from "../CreateTodoForm/CreateTodoForm";
 import EditableTodoItem from "../EditableTodoItem/EditableTodoItem";
 import TodoItem from "../TodoItem/TodoItem";
-import CustomAccordion from "../CustomAccordion/CustomAccordion";
 
 const TodoLayout = ({
   todos,
