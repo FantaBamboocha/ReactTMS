@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import useForm from "../../../hooks/useForm";
@@ -30,25 +31,25 @@ const RtkTodoContainer = () => {
     handleReset();
   };
 
-  const handleTaskDelete = (id) => {
+  const handleTaskDelete = useCallback((id) => {
     dispatch(removeTodo(id));
-  };
+  }, []);
 
-  const handleTaskComplete = (id) => {
+  const handleTaskComplete = useCallback((id) => {
     dispatch(completeTodo(id));
-  };
+  }, []);
 
-  const handleTaskEdit = (id) => {
+  const handleTaskEdit = useCallback((id) => {
     dispatch(editTodo(id));
-  };
+  }, []);
 
-  const handleTaskCancel = (id) => {
+  const handleTaskCancel = useCallback((id) => {
     dispatch(undoEditing(id));
-  };
+  }, []);
 
-  const handleTaskSave = (newTask) => {
+  const handleTaskSave = useCallback((newTask) => {
     dispatch(saveEditing(newTask));
-  };
+  }, []);
   return (
     <>
       <h2>RTK</h2>

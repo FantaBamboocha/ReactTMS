@@ -25,6 +25,9 @@ const Header = () => {
       <Link to={ROUTE_NAMES.RTK_TODO_LIST} className={styles.button}>
         RTK Todo
       </Link>
+      <Link to={ROUTE_NAMES.FETCH_NATIVE} className={styles.button}>
+        Native Fetch
+      </Link>
     </div>
   );
 };

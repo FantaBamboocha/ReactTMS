@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { v4 as uuid } from "uuid";
 
 import CounterListView from "../components/CounterListView";
@@ -54,6 +54,8 @@ const CounterListContainer = () => {
     });
   }, []);
 
+  // useEffect(() => console.log("Delete one"), [handleDeleteCounter]);
+
   const handleIncrement = useCallback((id) => {
     setCounters((state) => {
       const copyCounters = structuredClone(state);
@@ -64,6 +66,8 @@ const CounterListContainer = () => {
       return copyCounters;
     });
   }, []);
+
+  // useEffect(() => console.log("Increment"), [handleIncrement]);
 
   const handleDecrement = useCallback((id) => {
     setCounters((state) => {
@@ -76,6 +80,8 @@ const CounterListContainer = () => {
     });
   }, []);
 
+  // useEffect(() => console.log("Decrement"), [handleDecrement]);
+
   const handleReset = useCallback((id) => {
     setCounters((state) => {
       const copyCounters = structuredClone(state);
@@ -87,10 +93,14 @@ const CounterListContainer = () => {
     });
   }, []);
 
+  // useEffect(() => console.log("Reset"), [handleReset]);
+
   const totalValue = counters.reduce(
     (result, { countValue }) => result + countValue,
     0
   );
+
+  console.log("Container rendered");
 
   return (
     <CounterListView

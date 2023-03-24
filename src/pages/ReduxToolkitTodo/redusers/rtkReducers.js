@@ -19,40 +19,30 @@ const todoSlice = createSlice({
       };
 
       state.rtkTodos.unshift(newTask);
-
-      return state;
     },
 
     removeTodo: (state, { payload: id }) => {
       const indexToDelete = state.rtkTodos.findIndex((todo) => todo.id === id);
 
       state.rtkTodos.splice(indexToDelete, 1);
-
-      return state;
     },
 
     completeTodo: (state, { payload: id }) => {
       const foundTodo = state.rtkTodos.find((todo) => todo.id === id);
 
       foundTodo.isCompleted = true;
-
-      return state;
     },
 
     editTodo: (state, { payload: id }) => {
       const foundTodo = state.rtkTodos.find((todo) => todo.id === id);
 
       foundTodo.isEditable = true;
-
-      return state;
     },
 
     undoEditing: (state, { payload: id }) => {
       const foundTodo = state.rtkTodos.find((todo) => todo.id === id);
 
       foundTodo.isEditable = false;
-
-      return state;
     },
 
     saveEditing: (state, { payload: newTask }) => {
@@ -62,8 +52,6 @@ const todoSlice = createSlice({
       foundTodo.text = newText;
       foundTodo.description = newDescription;
       foundTodo.isEditable = false;
-
-      return state;
     },
   },
 });

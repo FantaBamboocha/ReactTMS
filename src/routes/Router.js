@@ -7,6 +7,7 @@ import FormContainer from "../pages/Forms/containers/FormContainer";
 import TodoListContainer from "../pages/todoList/containers/TodoListContainer";
 import { ROUTE_NAMES } from "./routeNames";
 import RtkTodoContainer from "../pages/ReduxToolkitTodo/containers/RtkTodoContainer";
+import NativeFetchContainer from "../pages/NativeFetch/NativeFetchContainer";
 
 const Router = () => {
   return (
@@ -28,6 +29,10 @@ const Router = () => {
       <Route
         path={ROUTE_NAMES.RTK_TODO_LIST}
         element={<RtkTodoContainer />}
+      ></Route>
+      <Route
+        path={ROUTE_NAMES.FETCH_NATIVE}
+        element={<NativeFetchContainer />}
       ></Route>
     </Routes>
   );

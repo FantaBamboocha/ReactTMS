@@ -13,7 +13,7 @@ const useForm = (initialFormValue) => {
 
   const handleReset = useCallback(() => {
     setForm(initialFormValue);
-  }, [initialFormValue]);
+  }, []);
 
   return { form, handleChange, handleReset };
 };
