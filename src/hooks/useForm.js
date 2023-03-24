@@ -5,7 +5,6 @@ const useForm = (initialFormValue) => {
 
   const handleChange = useCallback(({ target }) => {
     const { name, value } = target;
-
     setForm((state) => ({
       ...state,
       [name]: value,
@@ -14,7 +13,7 @@ const useForm = (initialFormValue) => {
 
   const handleReset = useCallback(() => {
     setForm(initialFormValue);
-  }, [initialFormValue]);
+  }, []);
 
   return { form, handleChange, handleReset };
 };

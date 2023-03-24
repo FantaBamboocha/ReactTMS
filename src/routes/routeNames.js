@@ -5,4 +5,6 @@ export const ROUTE_NAMES = {
   REDUX_COUNTER_LIST: "/redux-counters",
   FORM: "/form",
   REDUX_TODO_LIST: "/redux-todo-list",
+  RTK_TODO_LIST: "rtk-todo-list",
+  FETCH_NATIVE: "fetch-native",
 };

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import PropTypes from "prop-types";
 
 import styles from "./styles.module.scss";
@@ -42,4 +43,4 @@ CounterView.propTypes = {
   handleDeleteCounter: PropTypes.func,
 };
 
-export default CounterView;
+export default memo(CounterView);
